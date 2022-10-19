@@ -24,6 +24,20 @@ alert('Error:' + response.errorMessage);
 }
 }});
 }
+// if there's a user logged in then shows the logout link
+gigya.accounts.getAccountInfo({callback:function (response) {
+if (response.errorCode == 0) {
+document.getElementById("logout").hidden=false;
+}
+}});
+37
+3. To show the “Logout” link after a login succeeds, paste the following code before the “</script>” tag.
+// traps the login event to show the logout link
+gigya.socialize.addEventHandlers({
+onLogin: function () {
+document.getElementById("logout").hidden=false;
+}
+});
 </script>
 </body>
 </html>
