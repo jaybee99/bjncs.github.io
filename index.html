@@ -1,23 +1,23 @@
 <html>
 <head>
 <title>Mobile Ready Screen-Set Implementation Example</title>
-<metaname="viewport" content="width=device-width">
-<SCRIPTtype="text/javascript" lang="javascript"
+<meta name="viewport" content="width=device-width">
+<SCRIPT type="text/javascript" lang="javascript"
 src="https://cdns.gigya.com/js/gigya.js?apikey=4_StA_b_XM8EYqZx9AIc7b5Q"></SCRIPT>
 </head>
 <body>
-<ahref="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-LiteRegistration'});">Subscribe Here!</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<ahref="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-registerscreen'});">Register</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<ahref="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});">Login</a>
+<a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-LiteRegistration'});">Subscribe Here!</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen:'gigya-registerscreen'});">Register</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin'});">Login</a>
 
-<spanid="logout" hidden>&nbsp;&nbsp;|&nbsp;&nbsp;<ahref="#" onclick="logout();">Logout</a></span>
-<scripttype="text/javascript" lang="javascript">
+<span id="logout" hidden> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="logout();">Logout</a></span>
+<script type="text/javascript" lang="javascript">
 // calls logout and then hides the logout link if the logout succeeds
-functionlogout(){gigya.accounts.logout({callback:function(response){if(response.errorCode==0){document.getElementById("logout").hidden=true;}
-else{alert('Error:'+response.errorMessage);}}});}
+function logout() {gigya.accounts.logout({callback:function (response) {if (response.errorCode == 0) {document.getElementById("logout").hidden=true;}
+else {alert('Error:' + response.errorMessage);}}});}
 
 // traps the login event to show the logout link
-gigya.socialize.addEventHandlers({onLogin: function(){document.getElementById("logout").hidden=false;}});</script>
+gigya.socialize.addEventHandlers({onLogin: function () {document.getElementById("logout").hidden=false;}});</script>
   
 </body>
 </html>
